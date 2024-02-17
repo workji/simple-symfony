@@ -37,6 +37,9 @@ set encoding=utf-8
 vi /etc/apache2/sites-available/000-default.conf
 /var/www/html -> /var/www/html/publicへ変更
 
+# Install Symfony Components
+composer require symfony/apache-pack
+
 # apache2再起動
 service apache2 restart
 # 上記うまく起動できない場合は、docker compose stop -> start
