@@ -26,6 +26,7 @@ git config --global --add safe.directory /var/www/html && git config --global us
 find /var/www/html/ -type f -delete && find /var/www/html/ -mindepth 1 -type d -delete
 
 # new project
+# symfony new --webapp --dir=/var/www/html my_project --version=5.4.34
 symfony new --webapp --dir=/var/www/html my_project
 chmod 777 -R /var/www/html
 
@@ -36,7 +37,9 @@ set encoding=utf-8
 vi /etc/apache2/sites-available/000-default.conf
 /var/www/html -> /var/www/html/publicへ変更
 
+# apache2再起動
 service apache2 restart
+# 上記うまく起動できない場合は、docker compose stop -> start
 ```
 
 ## 動作確認
