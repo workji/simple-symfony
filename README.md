@@ -11,7 +11,7 @@ docker compose build --no-cache
 
 ```
 docker compose up --force-recreate
-Or
+OR
 docker-compose up -d
 ```
 
@@ -28,6 +28,11 @@ find /var/www/html/ -type f -delete && find /var/www/html/ -mindepth 1 -type d -
 # new project
 # symfony new --webapp --dir=/var/www/html my_project --version=5.4.34
 symfony new --webapp --dir=/var/www/html my_project
+OR 
+# もしバージョン指定が効かないなら、以下方法で
+composer create-project symfony/website-skeleton:"5.4.*" html/
+
+# wsl2の場合権限つける
 chmod 777 -R /var/www/html
 
 # DocumentRootを変更する
