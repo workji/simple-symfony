@@ -44,6 +44,10 @@ vi /etc/apache2/sites-available/000-default.conf
 
 # Install Symfony Components
 composer require symfony/apache-pack
+# 注意
+# Root composer.json requires symfony/asset-mapper 5.4.*, found symfony/asset-mapper[v6.3.0
+# バージョン古いの方、上記conflictするため、composer.jsonに以下修正必要
+"symfony/asset-mapper": "5.4.*" -> "symfony/asset-mapper": "5.4.* || ^6.3"
 
 # apache2再起動
 service apache2 restart
