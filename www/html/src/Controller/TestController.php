@@ -16,7 +16,7 @@ class TestController extends AbstractController
     {
 
         $student = new Student();
-        $student->setName('Keyboard');
+        $student->setName('Keyboard' . date("Y-m-d H:i:s"));
         $entityManager->persist($student);
         $entityManager->flush();
 
@@ -25,7 +25,7 @@ class TestController extends AbstractController
         ]);
     }
 
-    #[Route('/test/{id}', name: 'app_test')]
+    #[Route('/test/{id}', name: 'app_test_detail')]
     public function test02(StudentRepository $studentRepository, int $id): Response
     {
         $student = $studentRepository
