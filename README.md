@@ -57,6 +57,11 @@ service apache2 restart
 # 上記うまく起動できない場合は、docker compose stop -> start
 ```
 
+データベース接続(.env)注意
+```text
+DATABASE_URL="mysql://test_user:test_pass@mysql:3306/test_db_name?serverVersion=10.3.39-MariaDB&charset=utf8mb4"
+```
+
 ## 動作確認
 1. WEBページを確認
 ```
